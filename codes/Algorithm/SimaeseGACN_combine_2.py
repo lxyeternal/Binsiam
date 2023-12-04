@@ -73,12 +73,12 @@ class SiameseGCN(nn.Module):
 
 class TrainTest:
     def __init__(self, train_dataloader, validation_dataloader, test_dataloader):
-        self.dim_nfeats = 100
-        self.hidden1_feats = 200
-        self.hidden2_feats = 250
+        self.dim_nfeats = 300
+        self.hidden1_feats = 300
+        self.hidden2_feats = 300
         self.gclasses = 2
         self.n_steps = 10
-        self.n_etypes = 2
+        self.n_etypes = 3
         self.batchepoch = 50000
         self.num_correct = 0
         self.num_tests = 0

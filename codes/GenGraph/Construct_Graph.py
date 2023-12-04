@@ -11,10 +11,13 @@ import os
 import dgl
 import pydot
 import json
+
+import torch
 import torch as th
 import networkx as nx
 import numpy as np
 import matplotlib.pyplot as plt
+from dgl import save_graphs, load_graphs
 from codes.GenGraph.attribute import extract_attributes
 
 
@@ -86,6 +89,7 @@ class Dgl_Graph:
         return mean_columns
 
     def gengraph(self, filename):
+        self.node_list.clear()
         graph = pydot.graph_from_dot_file(filename)
         dot_graph = graph[0]
         graph_nodes = dot_graph.get_nodes()
@@ -116,7 +120,8 @@ class Dgl_Graph:
         #  生成图中的节点以及特征
         for node in graph_nodes:
             node_index = self.node_list.index(node.get_name())
-            node_str_attributes = node.get_attributes()['label'][2:-2]
+            node_str_attributes = node.get_attributes()['label'][1:-1]
+            print(node_str_attributes)
             node_str_attributes_split = node_str_attributes.split(' ')
             node_attributes_vec = self.code2vec(node_str_attributes_split)
             vec_attributes = th.tensor([node_attributes_vec], dtype=th.float32)
@@ -133,4 +138,4 @@ class Dgl_Graph:
 
 if __name__ == '__main__':
     dglgraph = Dgl_Graph()
-    dglgraph.gengraph("/Users/blue/Documents/Binsimi/dataset/Dotfile/coreutils-9.1/True-CSG/coreutils-9.1_clang-9.0_arm_64_O0_[-__ctype_b_loc.dot")
+    dglgraph.gengraph("/Users/blue/Desktop/findutils-4.9.0_clang-9.0_x86_64_O3_locate-re_search_internal.dot")

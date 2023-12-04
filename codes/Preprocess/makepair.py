@@ -12,7 +12,6 @@
 
 import os
 import json
-import sys
 import torch
 from tqdm import tqdm, trange
 from collections import Counter
@@ -70,6 +69,7 @@ class MakePairs:
         self.save_graphs_filename = self.dataset_filename + '.bin'
         self.pos_threshold = 40000
         self.neg_threshold = 40000
+        self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
     def write_pairs(self, paired_dotfiles, txtfile):
@@ -107,22 +107,18 @@ class MakePairs:
                 alldots[dot_type].append(dotfile_fullpath)
         return alldots
 
-
     def single_process_graph_vec(self, paired_dotfiles_subset):
-        for paired_dotfile in paired_dotfiles_subset:
+        graph_vecs = {}
+        for paired_dotfile in tqdm(paired_dotfiles_subset):
             try:
                 dgl_vec = self.dglgraph.gengraph(paired_dotfile)
-                graph_labels = {"glabel": torch.tensor([0])}  # 假设我们有一个图标签
-                full_path = paired_dotfile.replace(".dot", ".bin").replace("Dotfile", "DGLdata")
-                directory = os.path.dirname(full_path)  # 获取文件所在的目录
-                if not os.path.exists(directory):  # 如果目录不存在
-                    os.makedirs(directory)  # 创建目录
-                save_graphs(full_path, [dgl_vec], graph_labels)
+                graph_vecs[paired_dotfile] = dgl_vec
             except Exception as e:
                 # Optionally print the error for logging purposes
                 print(f"Error processing {paired_dotfile}: {str(e)}")
                 # Continue processing the next file in the subset
                 continue
+        return graph_vecs
 
 
     def graph_vec(self, paired_graphs):
@@ -132,28 +128,11 @@ class MakePairs:
             chunk_size = len(paired_graphs) // num_processes
             results = pool.map(self.single_process_graph_vec,
                                [paired_graphs[i:i + chunk_size] for i in range(0, len(paired_graphs), chunk_size)])
-
-
-    def construct_graphs_and_labels(self, paired_dotfiles, labels):
-        new_graphs = []
-        new_labels = []
-        dgl_vec_dict = dict()
-        dgl_files = os.listdir(os.path.join(self.dgldata_path, self.task_path))
-        for dgl_file in dgl_files:
-            dgl_vec_dict[dgl_file.replace(".bin", ".dot")] = load_graphs(os.path.join(self.dgldata_path, self.task_path, dgl_file))[0][0]
-        # Iterate over every two files in paired_dotfiles
-        print("Construct DGL dataset.......")
-        for i in trange(0, len(paired_dotfiles), 2):
-            file1 = paired_dotfiles[i]
-            file2 = paired_dotfiles[i + 1]
-            # Check if both files exist in dot_vecs_dict
-            try:
-                new_graphs.append(dgl_vec_dict[file1])
-                new_graphs.append(dgl_vec_dict[file2])
-                new_labels.append(labels[i // 2])  # Use integer division to get the corresponding label
-            except:
-                pass
-        return new_graphs, new_labels
+            # 合并所有子进程返回的结果字典
+        graph_vecs = {}
+        for res in results:
+            graph_vecs.update(res)
+        return graph_vecs
 
 
     def make_pairs(self, data_dict):
@@ -192,13 +171,14 @@ class MakePairs:
                                 paired_dotfiles.extend([files[i], files[j]])
                                 labels.append(0)
                                 neg_count += 1
-        #  save paired dotfiles
-        # self.write_pairs(paired_dotfiles, os.path.join(self.pairdata_path, self.dataset_filename + ".txt"))
-        #  construct the bin file used to train model
-        new_graphs, new_labels = self.construct_graphs_and_labels(paired_dotfiles, labels)
+        print(f"Total number of pairs: {len(paired_dotfiles)}")
+        deduped_paired_dotfiles = list(set(paired_dotfiles))
+        print(f"Total number of pairs: {len(deduped_paired_dotfiles)}")
+        dot_vecs_dict = self.graph_vec(deduped_paired_dotfiles)
+        new_graphs = [dot_vecs_dict[key] for key in paired_dotfiles]
         count = Counter(labels)
         print(count, len(labels))
-        new_labels = torch.tensor(new_labels)
+        new_labels = torch.tensor(labels)
         save_graphs(os.path.join(self.bindata_path, self.save_graphs_filename), new_graphs, {'labels': new_labels})
 
     def makepairmain(self, project_dots_dict):

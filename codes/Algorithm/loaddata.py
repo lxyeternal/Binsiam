@@ -15,7 +15,7 @@ from dgl import load_graphs
 
 class LoadData:
     def __init__(self):
-        self.dataset_path = "../../dataset/DGLBatch/test_pairs.bin"
+        self.dataset_path = "../../dataset/BinData/findutils-4.9.0-True-CSG-False-False-True-False.bin"
         self.dataset, self.labels = load_graphs(self.dataset_path)
         self.dataset_list = list()
         self.labels_list = list()
@@ -25,7 +25,7 @@ class LoadData:
 
     def transfer_dataset(self, dataset, lables):
         pairs = [(dataset[i], dataset[i + 1]) for i in range(0, len(dataset), 2)]
-        labels = lables['glabel'].tolist()
+        labels = lables['labels'].tolist()
         self.dataset_list = self.dataset_list + pairs
         self.labels_list = self.labels_list + labels
 
