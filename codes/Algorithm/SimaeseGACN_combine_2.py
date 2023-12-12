@@ -49,22 +49,6 @@ class SiameseGCN(nn.Module):
     def forward(self, g1, g2, in_feat1, in_feat2, e_type1, e_type2):
         h1 = self.gcn(g1, in_feat1, e_type1)
         h2 = self.gcn(g2, in_feat2, e_type2)
-
-        """
-        # lstm feature
-        tensor1=torch.rand(1, 100)
-        tensor2=torch.rand(1, 100)
-        h3 = self.lstm(tensor1)
-        h4 = self.lstm(tensor2)
-        # mix gcn feature and lstm feature
-        h3 = h3.unsqueeze(-1)
-        h4 = h4.unsqueeze(-1)
-        mix_feature_g1 = torch.concat(h1, h3)
-        mix_feature_g2 = torch.concat(h2, h4)
-        dist = F.pairwise_distance(mix_feature_g1, mix_feature_g2)
-        dist = F.softmax(dist, dim=1)
-        return dist
-        """
         dist = F.pairwise_distance(h1, h2)
         # dist = F.cosine_similarity(h1, h2, 2)
         dist = F.softmax(dist, dim=1)
@@ -74,12 +58,12 @@ class SiameseGCN(nn.Module):
 class TrainTest:
     def __init__(self, train_dataloader, validation_dataloader, test_dataloader):
         self.dim_nfeats = 300
-        self.hidden1_feats = 300
-        self.hidden2_feats = 300
+        self.hidden1_feats = 350
+        self.hidden2_feats = 400
         self.gclasses = 2
         self.n_steps = 10
         self.n_etypes = 3
-        self.batchepoch = 50000
+        self.batchepoch = 100
         self.num_correct = 0
         self.num_tests = 0
         self.min_loss = 1000
@@ -209,7 +193,7 @@ if __name__ == '__main__':
     # 加载数据集
     modeltraintest = TrainTest(train_dataloader, validation_dataloader, test_dataloader)
     # 模型训练
-    # modeltraintest.trainmodel()
+    modeltraintest.trainmodel()
     # # 模型测试
     modeltraintest.testmodel()
     # # 模型评估

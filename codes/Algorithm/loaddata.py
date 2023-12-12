@@ -15,7 +15,7 @@ from dgl import load_graphs
 
 class LoadData:
     def __init__(self):
-        self.dataset_path = "../../dataset/BinData/findutils-4.9.0-True-CSG-False-False-True-False.bin"
+        self.dataset_path = "../../dataset/BinData/recutils-1.9-True-CSG-False-True-False-False.bin"
         self.dataset, self.labels = load_graphs(self.dataset_path)
         self.dataset_list = list()
         self.labels_list = list()
@@ -29,9 +29,22 @@ class LoadData:
         self.dataset_list = self.dataset_list + pairs
         self.labels_list = self.labels_list + labels
 
+    def transform_lists(self, dataset, labels):
+        # 分离 a 列表为两个子列表，一个对应 b 中的 0，另一个对应 1
+        dataset_pos = [dataset[i] for i in range(len(dataset)) if labels[i] == 0]
+        dataset_neg = [dataset[i] for i in range(len(dataset)) if labels[i] == 1]
+        # 重新组合 a_new，交替从 a_0 和 a_1 中取元素
+        new_dataset = [None] * (len(dataset_pos) + len(dataset_neg))
+        new_dataset[::2] = dataset_pos
+        new_dataset[1::2] = dataset_neg
+        # 创建对应的 b_new
+        new_labels = torch.tensor([0, 1] * (len(dataset) // 2))
+        return new_dataset, new_labels
+
 
     def combine_dataset(self):
         self.transfer_dataset(self.dataset, self.labels)
+        self.dataset_list, self.labels_list = self.transform_lists(self.dataset_list, self.labels_list)
 
 
     #   划分数据集：训练集60%，验证集20%,测试集20%
@@ -77,4 +90,6 @@ class LoadData:
 # if __name__ == '__main__':
 #     loaddata = LoadData()
 #     loaddata.datasplit()
+
+
 
