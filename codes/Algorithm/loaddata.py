@@ -19,7 +19,7 @@ class LoadData:
         self.dataset, self.labels = load_graphs(self.dataset_path)
         self.dataset_list = list()
         self.labels_list = list()
-        self.graph_num_batch = 64
+        self.graph_num_batch = 4
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
@@ -87,9 +87,6 @@ class LoadData:
 
 
 
-# if __name__ == '__main__':
-#     loaddata = LoadData()
-#     loaddata.datasplit()
-
-
-
+if __name__ == '__main__':
+    loaddata = LoadData()
+    loaddata.datasplit()

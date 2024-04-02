@@ -15,12 +15,12 @@ from dgl import load_graphs
 
 class LoadData:
     def __init__(self):
-        self.all_dataset_path = "../../dataset/Compare/all_pairs_coreutils_compiler_cfg.bin"
+        self.all_dataset_path = "/Users/blue/Documents/Binsiam/dataset/BinData/recutils-1.9-True-CSG-False-True-False-False.bin"
         self.all_dataset, self.labels_tmp = load_graphs(self.all_dataset_path)
         self.all_dataset = self.all_dataset[:10000]
-        self.labels_tmp_new = self.labels_tmp['glabel'].tolist()[:10000]
+        self.labels_tmp_new = self.labels_tmp['labels'].tolist()[:10000]
         self.all_labels = dict()
-        self.all_labels['glabel'] = torch.tensor(self.labels_tmp_new)
+        self.all_labels['labels'] = torch.tensor(self.labels_tmp_new)
         self.dataset_list = list()
         self.labels_list = list()
         self.graph_num_batch = 8
@@ -28,7 +28,7 @@ class LoadData:
 
     def transfer_dataset(self, dataset, lables):
         pairs = [(dataset[i], dataset[i + 1]) for i in range(0, len(dataset), 2)]
-        labels = lables['glabel'].tolist()
+        labels = lables['labels'].tolist()
         self.dataset_list = self.dataset_list + pairs
         self.labels_list = self.labels_list + labels
 
