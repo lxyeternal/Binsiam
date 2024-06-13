@@ -1,0 +1,16 @@
+digraph "func" {
+"4261920" [label = "mov eax , address" ]
+"4261925" [label = "and eax , dword [ rsi ]" ]
+"4261927" [label = "or eax , address" ]
+"4261932" [label = "mov esi , eax" ]
+"4261934" [label = "mov edx , address" ]
+"4261939" [label = "xor eax , eax" ]
+"4261941" [label = "jmp symbol" ]
+"4261920" -> "4261925" [ label = "CFG" ]
+"4261925" -> "4261927" [ label = "DFG" ]
+"4261927" -> "4261932" [ label = "DFG" ]
+"4261932" -> "4261934" [ label = "CFG" ]
+"4261932" -> "4261941" [ label = "DFG" ]
+"4261934" -> "4261939" [ label = "CFG" ]
+"4261939" -> "4261941" [ label = "CFG" ]
+}

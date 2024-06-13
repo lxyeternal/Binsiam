@@ -1,0 +1,10 @@
+digraph "func" {
+"134570480" [label = "'push ebp', 'push ebx', 'push edi', 'push esi', 'sub esp, 0xc', 'mov dword [esp+0x8], edx', 'mov esi, ecx', 'mov ebx, dword [esp+0x28]', 'mov ebp, dword [esp+0x24]', 'mov edi, dword [esp+0x20]', 'lea edx, [edi+0x8]', 'sub esp, 0xc', 'push 0x8', 'push ebx', 'push ebp', 'push dword [edi+0x4]', 'push dword [edi]', 'call 0x80562b0', 'add esp, 0x20', 'test eax, eax', 'je 0x805622c', " ]
+"134570540" [label = "'sub esp, 0x4', 'mov ecx, esi', 'mov edx, ebp', 'push dword [edi+0x4]', 'mov ebp, dword [esp+0x10]', 'push dword [ebp]', 'push ebx', 'call 0x80566d0', 'add esp, 0x10', 'test eax, eax', 'jne 0x8056224', " ]
+"134570532" [label = "'add esp, 0xc', 'pop esi', 'pop edi', 'pop ebx', 'pop ebp', 'retn', " ]
+"134570570" [label = "'add ebx, dword [edi+0x4]', 'sub ebx, dword [ebp]', 'mov ecx, esi', 'mov edx, ebx', 'add esp, 0xc', 'pop esi', 'pop edi', 'pop ebx', 'pop ebp', 'jmp 0x8056180', " ]
+"134570480" -> "134570540" [ label = "CFG" ]
+"134570480" -> "134570532" [ label = "CFG" ]
+"134570540" -> "134570532" [ label = "CFG" ]
+"134570540" -> "134570570" [ label = "CFG" ]
+}

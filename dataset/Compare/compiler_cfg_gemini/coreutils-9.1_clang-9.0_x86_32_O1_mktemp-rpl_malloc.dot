@@ -1,0 +1,7 @@
+digraph "func" {
+"134533040" [label = "'sub esp, 0xc', 'mov ecx, dword [esp+0x10]', 'test ecx, ecx', 'mov eax, 0x1', 'cmovne eax, ecx', 'test eax, eax', 'js 0x804cfd1', " ]
+"134533073" [label = "'call 0x8048de0', 'mov dword [eax], 0xc', 'xor eax, eax', 'add esp, 0xc', 'retn', " ]
+"134533061" [label = "'mov dword [esp], eax', 'call 0x8048d20', 'add esp, 0xc', 'retn', " ]
+"134533040" -> "134533073" [ label = "CFG" ]
+"134533040" -> "134533061" [ label = "CFG" ]
+}

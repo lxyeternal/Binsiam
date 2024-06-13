@@ -1,0 +1,13 @@
+digraph "func" {
+"75216" [label = "and dil , address" ]
+"75220" [label = "add dil , address" ]
+"75224" [label = "cmp dil , address" ]
+"75228" [label = "setb al" ]
+"75231" [label = "retn" ]
+"75216" -> "75220" [ label = "DFG" ]
+"75216" -> "75224" [ label = "DFG" ]
+"75220" -> "75224" [ label = "DFG" ]
+"75220" -> "75216" [ label = "DFG" ]
+"75224" -> "75228" [ label = "DFG" ]
+"75228" -> "75231" [ label = "CFG" ]
+}

@@ -1,0 +1,14 @@
+digraph "func" {
+"134521136" [label = "'push ebp', 'push ebx', 'push edi', 'push esi', 'sub esp, 0xc', 'mov esi, ecx', 'mov ebp, dword [ecx]', 'mov eax, dword [ecx+0x4]', 'lea edi, [ebp+eax-0x1]', 'movzx ecx, byte [ebp+eax-0x1]', 'mov dword [esp+0x4], ecx', 'dec eax', 'mov dword [esp+0x8], eax', 'movsx eax, byte [ebp]', 'sub esp, 0x4', 'push 0x6', 'push eax', 'push 0x804e93a', 'call 0x8048e20', 'add esp, 0x10', 'test eax, eax', 'setne al', 'mov bl, byte [esi+0xc]', 'and bl, 0xfe', 'or bl, al', 'mov byte [esi+0xc], bl', 'call 0x8048f20', 'mov eax, dword [eax]', 'mov ecx, dword [esp+0x4]', 'mov al, byte [eax+ecx*2]', 'and al, 0x4', 'and bl, 0xfb', 'or bl, al', 'mov byte [esi+0xc], bl', 'cmp dword [esp+0x8], 0x0', 'jle 0x804a1bf', " ]
+"134521279" [label = "'movsx eax, byte [edi]', 'sub esp, 0x4', 'push 0x4', 'push eax', 'push 0x804e945', 'call 0x8048e20', 'add esp, 0x10', 'test eax, eax', 'setne al', 'add al, al', 'and bl, 0xfd', 'or bl, al', 'mov byte [esi+0xc], bl', 'add esp, 0xc', 'pop esi', 'pop edi', 'pop ebx', 'pop ebp', 'retn', " ]
+"134521238" [label = "'nop word [cs:eax+eax], ax', " ]
+"134521248" [label = "'movsx eax, byte [edi]', 'sub esp, 0x4', 'push 0x5', 'push eax', 'push 0x804e940', 'call 0x8048e20', 'add esp, 0x10', 'test eax, eax', 'je 0x804a1bf', " ]
+"134521274" [label = "'dec edi', 'cmp ebp, edi', 'jb 0x804a1a0', " ]
+"134521136" -> "134521279" [ label = "CFG" ]
+"134521136" -> "134521238" [ label = "CFG" ]
+"134521238" -> "134521248" [ label = "CFG" ]
+"134521248" -> "134521279" [ label = "CFG" ]
+"134521248" -> "134521274" [ label = "CFG" ]
+"134521274" -> "134521248" [ label = "CFG" ]
+"134521274" -> "134521279" [ label = "CFG" ]
+}

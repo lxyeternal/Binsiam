@@ -1,0 +1,14 @@
+digraph "func" {
+"159664" [label = "lea rax , [ rel symbol ]" ]
+"159671" [label = "movzx edi , dil" ]
+"159675" [label = "movzx eax , byte [ rax + rdi ]" ]
+"159679" [label = "not eax" ]
+"159681" [label = "shr al , address" ]
+"159684" [label = "retn" ]
+"159664" -> "159671" [ label = "CFG" ]
+"159671" -> "159675" [ label = "DFG" ]
+"159675" -> "159679" [ label = "DFG" ]
+"159679" -> "159681" [ label = "DFG" ]
+"159679" -> "159684" [ label = "DFG" ]
+"159681" -> "159684" [ label = "CFG" ]
+}

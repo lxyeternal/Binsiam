@@ -1,0 +1,15 @@
+digraph "func" {
+"143976" [label = "sxtw x9 , w1" ]
+"143980" [label = "neg x9 , x9" ]
+"143984" [label = "lsl x8 , x0 , x1" ]
+"143988" [label = "lsr x9 , x0 , x9" ]
+"143992" [label = "orr x0 , x9 , x8" ]
+"143996" [label = "ret" ]
+"143976" -> "143980" [ label = "DFG" ]
+"143980" -> "143984" [ label = "CFG" ]
+"143980" -> "143988" [ label = "DFG" ]
+"143984" -> "143988" [ label = "CFG" ]
+"143984" -> "143992" [ label = "DFG" ]
+"143988" -> "143992" [ label = "DFG" ]
+"143992" -> "143996" [ label = "DFG" ]
+}

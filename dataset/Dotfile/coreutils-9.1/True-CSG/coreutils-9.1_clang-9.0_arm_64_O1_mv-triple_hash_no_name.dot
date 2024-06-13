@@ -1,0 +1,10 @@
+digraph "func" {
+"4250620" [label = "ldr x8 , [ x0 , # address ]" ]
+"4250624" [label = "udiv x9 , x8 , x1" ]
+"4250628" [label = "msub x0 , x9 , x1 , x8" ]
+"4250632" [label = "ret" ]
+"4250620" -> "4250624" [ label = "DFG" ]
+"4250620" -> "4250628" [ label = "DFG" ]
+"4250624" -> "4250628" [ label = "DFG" ]
+"4250628" -> "4250632" [ label = "DFG" ]
+}

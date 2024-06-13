@@ -1,0 +1,13 @@
+digraph "func" {
+"4240544" [label = "xor eax , eax" ]
+"4240546" [label = "test rsi , rsi" ]
+"4240549" [label = "sete al" ]
+"4240552" [label = "or rsi , rax" ]
+"4240555" [label = "jmp symbol" ]
+"4240544" -> "4240546" [ label = "CFG" ]
+"4240544" -> "4240549" [ label = "DFG" ]
+"4240544" -> "4240552" [ label = "DFG" ]
+"4240546" -> "4240549" [ label = "CFG" ]
+"4240549" -> "4240552" [ label = "DFG" ]
+"4240552" -> "4240555" [ label = "DFG" ]
+}

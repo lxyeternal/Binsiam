@@ -1,0 +1,17 @@
+digraph "func" {
+"4294544" [label = "sub rsp , address" ]
+"4294548" [label = "call symbol" ]
+"4294553" [label = "test rax , rax" ]
+"4294556" [label = "je address" ]
+"4294563" [label = "call symbol" ]
+"4294558" [label = "add rsp , address" ]
+"4294562" [label = "retn" ]
+"4294544" -> "4294548" [ label = "CFG" ]
+"4294548" -> "4294553" [ label = "CFG" ]
+"4294548" -> "4294556" [ label = "DFG" ]
+"4294548" -> "4294562" [ label = "DFG" ]
+"4294553" -> "4294556" [ label = "CFG" ]
+"4294556" -> "4294563" [ label = "CFG" ]
+"4294556" -> "4294558" [ label = "CFG" ]
+"4294558" -> "4294562" [ label = "CFG" ]
+}

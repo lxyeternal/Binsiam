@@ -1,0 +1,18 @@
+digraph "func" {
+"138188" [label = "ldrsw x8 , [ x0 ]" ]
+"138192" [label = "cmp x8 , x1" ]
+"138196" [label = "b.ls address" ]
+"138212" [label = "mov x0 , xzr" ]
+"138200" [label = "add x8 , x0 , x1 , lsl # address" ]
+"138216" [label = "ret" ]
+"138204" [label = "ldr x0 , [ x8 , # address ]" ]
+"138208" [label = "ret" ]
+"138188" -> "138192" [ label = "CFG" ]
+"138188" -> "138196" [ label = "DFG" ]
+"138192" -> "138196" [ label = "CFG" ]
+"138196" -> "138212" [ label = "CFG" ]
+"138196" -> "138200" [ label = "CFG" ]
+"138212" -> "138216" [ label = "CFG" ]
+"138200" -> "138204" [ label = "DFG" ]
+"138204" -> "138208" [ label = "DFG" ]
+}

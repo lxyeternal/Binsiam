@@ -1,0 +1,15 @@
+digraph "func" {
+"80160" [label = "ldrsw x1 , [ x0 ]" ]
+"80164" [label = "ldr x2 , [ x0 , # address ]" ]
+"80168" [label = "ldr x0 , [ x0 , # address ]" ]
+"80172" [label = "add x1 , x2 , x1 , lsl # address" ]
+"80176" [label = "ldr x1 , [ x1 , # address ]" ]
+"80180" [label = "br x1" ]
+"80160" -> "80164" [ label = "CFG" ]
+"80160" -> "80172" [ label = "DFG" ]
+"80164" -> "80168" [ label = "CFG" ]
+"80164" -> "80172" [ label = "DFG" ]
+"80168" -> "80172" [ label = "CFG" ]
+"80172" -> "80176" [ label = "DFG" ]
+"80176" -> "80180" [ label = "DFG" ]
+}

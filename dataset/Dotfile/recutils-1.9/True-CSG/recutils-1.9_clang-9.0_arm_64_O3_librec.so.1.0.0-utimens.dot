@@ -1,0 +1,13 @@
+digraph "func" {
+"291904" [label = "mov x8 , x0" ]
+"291908" [label = "mov w0 , # address" ]
+"291912" [label = "mov x2 , x1" ]
+"291916" [label = "mov x1 , x8" ]
+"291920" [label = "b symbol" ]
+"291904" -> "291908" [ label = "CFG" ]
+"291904" -> "291916" [ label = "DFG" ]
+"291908" -> "291912" [ label = "CFG" ]
+"291912" -> "291916" [ label = "CFG" ]
+"291912" -> "291920" [ label = "DFG" ]
+"291916" -> "291920" [ label = "DFG" ]
+}

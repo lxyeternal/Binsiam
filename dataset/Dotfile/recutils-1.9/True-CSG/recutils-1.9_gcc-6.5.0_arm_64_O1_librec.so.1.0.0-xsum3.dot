@@ -1,0 +1,18 @@
+digraph "func" {
+"273816" [label = "add x1 , x0 , x1" ]
+"273820" [label = "cmp x0 , x1" ]
+"273824" [label = "csinv x1 , x1 , xzr , ls" ]
+"273828" [label = "add x0 , x2 , x1" ]
+"273832" [label = "cmp x0 , x1" ]
+"273836" [label = "csinv x0 , x0 , xzr , cs" ]
+"273840" [label = "ret" ]
+"273816" -> "273820" [ label = "CFG" ]
+"273816" -> "273824" [ label = "DFG" ]
+"273820" -> "273824" [ label = "CFG" ]
+"273824" -> "273828" [ label = "DFG" ]
+"273824" -> "273836" [ label = "DFG" ]
+"273828" -> "273832" [ label = "CFG" ]
+"273828" -> "273836" [ label = "DFG" ]
+"273832" -> "273836" [ label = "CFG" ]
+"273836" -> "273840" [ label = "DFG" ]
+}

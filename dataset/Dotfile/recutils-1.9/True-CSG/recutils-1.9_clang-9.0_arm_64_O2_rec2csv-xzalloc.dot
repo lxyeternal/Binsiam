@@ -1,0 +1,18 @@
+digraph "func" {
+"4297400" [label = "stp x29 , x30 , [ sp , #- address ]!" ]
+"4297404" [label = "mov x29 , sp" ]
+"4297408" [label = "mov w1 , # address" ]
+"4297412" [label = "bl symbol" ]
+"4297416" [label = "cbz x0 , address" ]
+"4297428" [label = "bl symbol" ]
+"4297420" [label = "ldp x29 , x30 , [ sp ] , # address" ]
+"4297424" [label = "ret" ]
+"4297400" -> "4297404" [ label = "CFG" ]
+"4297404" -> "4297408" [ label = "CFG" ]
+"4297408" -> "4297412" [ label = "CFG" ]
+"4297412" -> "4297416" [ label = "DFG" ]
+"4297412" -> "4297424" [ label = "DFG" ]
+"4297416" -> "4297428" [ label = "CFG" ]
+"4297416" -> "4297420" [ label = "CFG" ]
+"4297420" -> "4297424" [ label = "CFG" ]
+}

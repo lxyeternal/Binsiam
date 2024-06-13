@@ -1,0 +1,15 @@
+digraph "func" {
+"207564" [label = "sub sp , sp , # address" ]
+"207568" [label = "mov w8 , # address" ]
+"207572" [label = "str x0 , [ sp , # address ]" ]
+"207576" [label = "ldr x9 , [ sp , # address ]" ]
+"207580" [label = "str w8 , [ x9 ]" ]
+"207584" [label = "add sp , sp , # address" ]
+"207588" [label = "ret" ]
+"207564" -> "207568" [ label = "CFG" ]
+"207568" -> "207572" [ label = "CFG" ]
+"207572" -> "207576" [ label = "DFG" ]
+"207576" -> "207580" [ label = "DFG" ]
+"207580" -> "207584" [ label = "CFG" ]
+"207584" -> "207588" [ label = "CFG" ]
+}

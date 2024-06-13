@@ -1,0 +1,17 @@
+digraph "func" {
+"157600" [label = "uxth w0 , w0" ]
+"157604" [label = "lsl w2 , w0 , w1" ]
+"157608" [label = "neg w1 , w1" ]
+"157612" [label = "and w1 , w1 , # address" ]
+"157616" [label = "lsr w0 , w0 , w1" ]
+"157620" [label = "orr w0 , w2 , w0" ]
+"157624" [label = "ret" ]
+"157600" -> "157604" [ label = "DFG" ]
+"157600" -> "157616" [ label = "DFG" ]
+"157604" -> "157608" [ label = "CFG" ]
+"157604" -> "157620" [ label = "DFG" ]
+"157608" -> "157612" [ label = "DFG" ]
+"157612" -> "157616" [ label = "DFG" ]
+"157616" -> "157620" [ label = "DFG" ]
+"157620" -> "157624" [ label = "DFG" ]
+}

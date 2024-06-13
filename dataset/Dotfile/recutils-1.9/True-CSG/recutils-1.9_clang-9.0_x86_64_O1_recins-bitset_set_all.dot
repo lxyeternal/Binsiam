@@ -1,0 +1,10 @@
+digraph "func" {
+"4274752" [label = "pcmpeqd xmm0 , xmm0" ]
+"4274756" [label = "movdqu xmmword [ rdi + address ] , xmm0" ]
+"4274761" [label = "movdqu xmmword [ rdi ] , xmm0" ]
+"4274765" [label = "retn" ]
+"4274752" -> "4274756" [ label = "DFG" ]
+"4274752" -> "4274761" [ label = "DFG" ]
+"4274756" -> "4274761" [ label = "CFG" ]
+"4274761" -> "4274765" [ label = "CFG" ]
+}

@@ -1,0 +1,16 @@
+digraph "func" {
+"4305496" [label = "uxtb w1 , w1" ]
+"4305500" [label = "cbz x0 , address" ]
+"4305516" [label = "mov w0 , # address" ]
+"4305504" [label = "strb w1 , [ x0 , # address ]" ]
+"4305520" [label = "ret" ]
+"4305508" [label = "mov w0 , # 0" ]
+"4305512" [label = "ret" ]
+"4305496" -> "4305500" [ label = "CFG" ]
+"4305496" -> "4305504" [ label = "DFG" ]
+"4305500" -> "4305516" [ label = "CFG" ]
+"4305500" -> "4305504" [ label = "CFG" ]
+"4305516" -> "4305520" [ label = "CFG" ]
+"4305504" -> "4305508" [ label = "CFG" ]
+"4305508" -> "4305512" [ label = "CFG" ]
+}

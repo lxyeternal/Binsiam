@@ -1,0 +1,11 @@
+digraph "func" {
+"159120" [label = "xor eax , eax" ]
+"159122" [label = "cmp qword [ rdi + address ] , address" ]
+"159127" [label = "setne al" ]
+"159130" [label = "retn" ]
+"159120" -> "159122" [ label = "CFG" ]
+"159120" -> "159127" [ label = "DFG" ]
+"159120" -> "159130" [ label = "DFG" ]
+"159122" -> "159127" [ label = "CFG" ]
+"159127" -> "159130" [ label = "CFG" ]
+}

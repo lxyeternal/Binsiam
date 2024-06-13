@@ -1,0 +1,13 @@
+digraph "func" {
+"134547504" [label = "'push ebp', 'push ebx', 'push edi', 'push esi', 'sub esp, 0xc', 'mov ebp, edx', 'mov edi, ecx', 'mov ecx, 0x91a2b3c5', 'mov eax, edi', 'imul ecx', 'mov ebx, edx', 'add ebx, edi', 'mov eax, ebx', 'shr eax, 0x1f', 'sar ebx, 0xb', 'add ebx, eax', 'mov eax, ebx', 'neg eax', 'cmovl eax, ebx', 'mov ecx, edi', 'shr ecx, 0x1f', 'lea ecx, [ecx+ecx+0x2b]', 'sub esp, 0x8', 'push eax', 'push ecx', 'push 0x805b408', 'push 0xffffffff', 'push 0x1', 'push ebp', 'call 0x8049230', 'add esp, 0x20', 'imul ecx, ebx, 0xe10', 'sub edi, ecx', 'mov ecx, edi', 'neg ecx', 'cmovl ecx, edi', 'test edi, edi', 'je 0x805090a', " ]
+"134547722" [label = "'mov eax, ebp', 'add esp, 0xc', 'pop esi', 'pop edi', 'pop ebx', 'pop ebp', 'retn', " ]
+"134547596" [label = "'mov esi, eax', 'mov dword [esp+0x8], ebp', 'add esi, ebp', 'movzx eax, cx', 'imul edx, eax, 0x8889', 'shr edx, 0x15', 'imul edi, edx, 0x3c', 'mov ebx, eax', 'shr ebx, 0x3', 'imul ebx, ebx, 0x1b4f', 'shr ebx, 0x13', 'add bl, 0x30', 'movzx ebp, dl', 'imul ebp, ebp, 0xcd', 'shr ebp, 0xa', 'and ebp, 0xfffffffe', 'lea ecx, [ebp+ebp*4]', 'sub dl, cl', 'or dl, 0x30', 'sub ax, di', 'mov byte [esi], 0x3a', 'mov byte [esi+0x1], bl', 'mov byte [esi+0x2], dl', 'lea ecx, [esi+0x3]', 'je 0x8050903', " ]
+"134547715" [label = "'mov byte [ecx], 0x0', 'mov ebp, dword [esp+0x8]', " ]
+"134547677" [label = "'mov byte [ecx], 0x3a', 'movzx edx, al', 'imul edx, edx, 0xcd', 'shr edx, 0xb', 'mov ebx, edx', 'or bl, 0x30', 'mov byte [ecx+0x1], bl', 'add edx, edx', 'lea edx, [edx+edx*4]', 'sub al, dl', 'or al, 0x30', 'mov byte [ecx+0x2], al', 'add ecx, 0x3', " ]
+"134547504" -> "134547722" [ label = "CFG" ]
+"134547504" -> "134547596" [ label = "CFG" ]
+"134547596" -> "134547715" [ label = "CFG" ]
+"134547596" -> "134547677" [ label = "CFG" ]
+"134547715" -> "134547722" [ label = "CFG" ]
+"134547677" -> "134547715" [ label = "CFG" ]
+}

@@ -1,0 +1,10 @@
+digraph "func" {
+"4208024" [label = "ldur w0 , [ x29 , #- address ]" ]
+"4208028" [label = "ldp x29 , x30 , [ sp , # address ]" ]
+"4208032" [label = "add sp , sp , # address" ]
+"4208036" [label = "ret" ]
+"4208024" -> "4208028" [ label = "CFG" ]
+"4208024" -> "4208036" [ label = "DFG" ]
+"4208028" -> "4208032" [ label = "CFG" ]
+"4208032" -> "4208036" [ label = "CFG" ]
+}

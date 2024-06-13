@@ -1,0 +1,11 @@
+digraph "func" {
+"107536" [label = "mov eax , dword [ rdi + address ]" ]
+"107539" [label = "test eax , eax" ]
+"107541" [label = "setne al" ]
+"107544" [label = "retn" ]
+"107536" -> "107539" [ label = "CFG" ]
+"107536" -> "107541" [ label = "DFG" ]
+"107536" -> "107544" [ label = "DFG" ]
+"107539" -> "107541" [ label = "CFG" ]
+"107541" -> "107544" [ label = "CFG" ]
+}

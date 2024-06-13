@@ -1,0 +1,15 @@
+digraph "func" {
+"4230168" [label = "adrp x2 , symbol" ]
+"4230172" [label = "cmp x0 , # 0" ]
+"4230176" [label = "add x2 , x2 , # address" ]
+"4230180" [label = "csel x0 , x2 , x0 , eq" ]
+"4230184" [label = "str w1 , [ x0 ]" ]
+"4230188" [label = "ret" ]
+"4230168" -> "4230172" [ label = "CFG" ]
+"4230172" -> "4230176" [ label = "CFG" ]
+"4230172" -> "4230180" [ label = "DFG" ]
+"4230176" -> "4230180" [ label = "CFG" ]
+"4230180" -> "4230184" [ label = "DFG" ]
+"4230180" -> "4230188" [ label = "DFG" ]
+"4230184" -> "4230188" [ label = "CFG" ]
+}

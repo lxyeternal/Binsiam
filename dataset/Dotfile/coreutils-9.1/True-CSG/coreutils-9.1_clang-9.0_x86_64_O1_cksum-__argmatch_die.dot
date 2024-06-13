@@ -1,0 +1,13 @@
+digraph "func" {
+"4224688" [label = "xor eax , eax" ]
+"4224690" [label = "xchg rbx , rsi" ]
+"4224693" [label = "cpuid" ]
+"4224695" [label = "xchg rbx , rsi" ]
+"4224698" [label = "retn" ]
+"4224688" -> "4224690" [ label = "CFG" ]
+"4224690" -> "4224693" [ label = "CFG" ]
+"4224690" -> "4224695" [ label = "DFG" ]
+"4224693" -> "4224695" [ label = "DFG" ]
+"4224693" -> "4224698" [ label = "DFG" ]
+"4224695" -> "4224698" [ label = "CFG" ]
+}

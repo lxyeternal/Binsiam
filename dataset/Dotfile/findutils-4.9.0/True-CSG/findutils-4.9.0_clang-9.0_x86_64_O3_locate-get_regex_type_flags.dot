@@ -1,0 +1,17 @@
+digraph "func" {
+"4217600" [label = "mov eax , address" ]
+"4217605" [label = "cmp edi , address" ]
+"4217608" [label = "ja address" ]
+"4217622" [label = "retn" ]
+"4217610" [label = "mov eax , edi" ]
+"4217612" [label = "shl rax , address" ]
+"4217616" [label = "mov eax , dword [ rax + address ]" ]
+"4217600" -> "4217605" [ label = "CFG" ]
+"4217600" -> "4217622" [ label = "DFG" ]
+"4217605" -> "4217608" [ label = "CFG" ]
+"4217608" -> "4217622" [ label = "CFG" ]
+"4217608" -> "4217610" [ label = "CFG" ]
+"4217610" -> "4217612" [ label = "DFG" ]
+"4217612" -> "4217616" [ label = "DFG" ]
+"4217616" -> "4217622" [ label = "DFG" ]
+}

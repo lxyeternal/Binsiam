@@ -1,0 +1,12 @@
+digraph "func" {
+"4287800" [label = "cmp x0 , # 0" ]
+"4287804" [label = "ccmp x1 , # 0 , # address , ne" ]
+"4287808" [label = "b.eq address" ]
+"4287816" [label = "ret" ]
+"4287812" [label = "str x1 , [ x0 , # address ]" ]
+"4287800" -> "4287804" [ label = "CFG" ]
+"4287804" -> "4287808" [ label = "DFG" ]
+"4287808" -> "4287816" [ label = "CFG" ]
+"4287808" -> "4287812" [ label = "CFG" ]
+"4287812" -> "4287816" [ label = "CFG" ]
+}

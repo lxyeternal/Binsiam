@@ -1,0 +1,18 @@
+digraph "func" {
+"188872" [label = "cmp x1 , # 0" ]
+"188876" [label = "ccmp x2 , # 0 , # address , ne" ]
+"188880" [label = "b.ne address" ]
+"188892" [label = "b symbol" ]
+"188884" [label = "mov x2 , # address" ]
+"188888" [label = "mov x1 , x2" ]
+"188872" -> "188876" [ label = "CFG" ]
+"188876" -> "188880" [ label = "DFG" ]
+"188880" -> "188892" [ label = "CFG" ]
+"188880" -> "188884" [ label = "CFG" ]
+"188892" -> "188876" [ label = "DFG" ]
+"188884" -> "188888" [ label = "CFG" ]
+"188884" -> "188876" [ label = "DFG" ]
+"188884" -> "188892" [ label = "DFG" ]
+"188888" -> "188892" [ label = "DFG" ]
+"188888" -> "188876" [ label = "DFG" ]
+}

@@ -1,0 +1,11 @@
+digraph "func" {
+"4298400" [label = "cbz x0 , address" ]
+"4298412" [label = "ret" ]
+"4298404" [label = "cbz x1 , address" ]
+"4298408" [label = "str x1 , [ x0 , # address ]" ]
+"4298400" -> "4298412" [ label = "CFG" ]
+"4298400" -> "4298404" [ label = "CFG" ]
+"4298404" -> "4298412" [ label = "CFG" ]
+"4298404" -> "4298408" [ label = "CFG" ]
+"4298408" -> "4298412" [ label = "CFG" ]
+}

@@ -1,0 +1,15 @@
+digraph "func" {
+"134583168" [label = "'push ebp', 'push ebx', 'push edi', 'push esi', 'sub esp, 0x1c', 'mov edi, ecx', 'mov eax, dword [esp+0x40]', 'mov dword [esp+0x18], eax', 'mov eax, dword [esp+0x3c]', 'mov dword [esp+0x14], eax', 'mov eax, dword [esp+0x38]', 'mov dword [esp+0x10], eax', 'mov ebp, dword [ecx]', 'mov eax, dword [ecx+0x4]', 'cmp ebp, eax', 'mov ebx, dword [esp+0x34]', 'mov esi, dword [esp+0x30]', 'jne 0x80593e1', " ]
+"134583265" [label = "'mov eax, dword [edi+0x8]', 'lea ecx, [ebp*8]', 'lea ecx, [ecx+ecx*2]', 'mov dword [eax+ecx], edx', 'mov dword [eax+ecx+0x4], esi', 'mov esi, ecx', 'mov eax, ebx', 'shl eax, 0x4', 'sub esp, 0xc', 'push eax', 'call 0x805a510', 'add esp, 0x10', 'mov ecx, dword [edi+0x8]', 'mov dword [ecx+esi+0x8], eax', 'test eax, eax', 'je 0x805945b', " ]
+"134583218" [label = "'mov dword [esp+0xc], esi', 'mov esi, edx', 'shl eax, 0x4', 'lea eax, [eax+eax*2]', 'sub esp, 0x8', 'push eax', 'push dword [edi+0x8]', 'call 0x805a550', 'add esp, 0x10', 'test eax, eax', 'je 0x805945b', " ]
+"134583387" [label = "'mov eax, 0xc', 'add esp, 0x1c', 'pop esi', 'pop edi', 'pop ebx', 'pop ebp', 'retn', " ]
+"134583315" [label = "'inc ebp', 'mov dword [edi], ebp', 'shl ebx, 0x3', 'sub esp, 0x4', 'push ebx', 'push dword [esp+0x18]', 'push eax', 'call 0x8049070', 'add esp, 0x10', 'mov eax, dword [edi+0x8]', 'mov eax, dword [eax+esi+0x8]', 'add eax, ebx', 'sub esp, 0x4', 'push ebx', 'push dword [esp+0x1c]', 'push eax', 'call 0x8049070', 'add esp, 0x10', 'mov eax, dword [edi+0x8]', 'lea ecx, [eax+esi+0xc]', 'mov edx, dword [esp+0x18]', 'add esp, 0x1c', 'pop esi', 'pop edi', 'pop ebx', 'pop ebp', 'jmp 0x8053ea0', " ]
+"134583253" [label = "'shl dword [edi+0x4], 0x1', 'mov dword [edi+0x8], eax', 'mov edx, esi', 'mov esi, dword [esp+0xc]', " ]
+"134583168" -> "134583265" [ label = "CFG" ]
+"134583168" -> "134583218" [ label = "CFG" ]
+"134583265" -> "134583387" [ label = "CFG" ]
+"134583265" -> "134583315" [ label = "CFG" ]
+"134583218" -> "134583387" [ label = "CFG" ]
+"134583218" -> "134583253" [ label = "CFG" ]
+"134583253" -> "134583265" [ label = "CFG" ]
+}

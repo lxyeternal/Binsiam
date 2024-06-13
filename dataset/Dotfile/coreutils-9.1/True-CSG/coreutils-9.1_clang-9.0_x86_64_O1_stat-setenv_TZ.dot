@@ -1,0 +1,18 @@
+digraph "func" {
+"4237184" [label = "test rdi , rdi" ]
+"4237187" [label = "je address" ]
+"4237207" [label = "mov edi , address" ]
+"4237189" [label = "mov rsi , rdi" ]
+"4237212" [label = "jmp symbol" ]
+"4237192" [label = "mov edi , address" ]
+"4237197" [label = "mov edx , address" ]
+"4237202" [label = "jmp symbol" ]
+"4237184" -> "4237187" [ label = "CFG" ]
+"4237187" -> "4237207" [ label = "CFG" ]
+"4237187" -> "4237189" [ label = "CFG" ]
+"4237207" -> "4237212" [ label = "CFG" ]
+"4237189" -> "4237192" [ label = "CFG" ]
+"4237189" -> "4237202" [ label = "DFG" ]
+"4237192" -> "4237197" [ label = "CFG" ]
+"4237197" -> "4237202" [ label = "CFG" ]
+}

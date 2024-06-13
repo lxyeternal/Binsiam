@@ -1,0 +1,16 @@
+digraph "func" {
+"134581200" [label = "'push ebx', 'push edi', 'push esi', 'mov esi, dword [esp+0x18]', 'mov edi, dword [ecx+0x74]', 'lea ebx, [edx+edx*2]', 'mov edx, dword [edi+ebx*8+0x8]', 'mov eax, 0xffffffff', 'cmp edx, esi', 'jg 0x8058c26', " ]
+"134581286" [label = "'pop esi', 'pop edi', 'pop ebx', 'retn', " ]
+"134581226" [label = "'mov edi, dword [edi+ebx*8+0xc]', 'mov eax, 0x1', 'cmp edi, esi', 'jl 0x8058c26', " ]
+"134581239" [label = "'xor eax, eax', 'cmp edx, esi', 'sete al', 'xor edx, edx', 'cmp edi, esi', 'sete dl', 'add edx, edx', 'or edx, eax', 'je 0x8058c24', " ]
+"134581284" [label = "'xor eax, eax', " ]
+"134581259" [label = "'sub esp, 0x4', 'push dword [esp+0x20]', 'push dword [esp+0x1c]', 'push dword [esp+0x1c]', 'call 0x8058c30', 'add esp, 0x10', 'jmp 0x8058c26', " ]
+"134581200" -> "134581286" [ label = "CFG" ]
+"134581200" -> "134581226" [ label = "CFG" ]
+"134581226" -> "134581286" [ label = "CFG" ]
+"134581226" -> "134581239" [ label = "CFG" ]
+"134581239" -> "134581284" [ label = "CFG" ]
+"134581239" -> "134581259" [ label = "CFG" ]
+"134581284" -> "134581286" [ label = "CFG" ]
+"134581259" -> "134581286" [ label = "CFG" ]
+}

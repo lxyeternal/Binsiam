@@ -1,0 +1,17 @@
+digraph "func" {
+"4213696" [label = "mov x8 , # address" ]
+"4213700" [label = "movk x8 , # address , lsl # address" ]
+"4213704" [label = "scvtf d1 , x1" ]
+"4213708" [label = "fmov d2 , x8" ]
+"4213712" [label = "scvtf d0 , x0" ]
+"4213716" [label = "fdiv d1 , d1 , d2" ]
+"4213720" [label = "fadd d0 , d1 , d0" ]
+"4213724" [label = "ret" ]
+"4213696" -> "4213700" [ label = "CFG" ]
+"4213700" -> "4213704" [ label = "CFG" ]
+"4213704" -> "4213708" [ label = "CFG" ]
+"4213708" -> "4213712" [ label = "CFG" ]
+"4213712" -> "4213716" [ label = "CFG" ]
+"4213716" -> "4213720" [ label = "CFG" ]
+"4213720" -> "4213724" [ label = "CFG" ]
+}

@@ -1,0 +1,18 @@
+digraph "func" {
+"142992" [label = "cmp esi , address" ]
+"142995" [label = "ja address" ]
+"143016" [label = "xor esi , esi" ]
+"142997" [label = "movsxd rax , esi" ]
+"143018" [label = "jmp symbol" ]
+"143000" [label = "lea rcx , [ rel address ]" ]
+"143007" [label = "mov rsi , qword [ rcx + rax * 8 ]" ]
+"143011" [label = "jmp symbol" ]
+"142992" -> "142995" [ label = "CFG" ]
+"142995" -> "143016" [ label = "CFG" ]
+"142995" -> "142997" [ label = "CFG" ]
+"143016" -> "143018" [ label = "CFG" ]
+"142997" -> "143000" [ label = "CFG" ]
+"142997" -> "143007" [ label = "DFG" ]
+"143000" -> "143007" [ label = "CFG" ]
+"143007" -> "143011" [ label = "DFG" ]
+}

@@ -1,0 +1,18 @@
+digraph "func" {
+"4215520" [label = "push rbx" ]
+"4215521" [label = "mov rbx , rdi" ]
+"4215524" [label = "call symbol" ]
+"4215529" [label = "lea rsi , [ rax + address ]" ]
+"4215533" [label = "mov rdi , rbx" ]
+"4215536" [label = "pop rbx" ]
+"4215537" [label = "jmp symbol" ]
+"4215520" -> "4215521" [ label = "CFG" ]
+"4215521" -> "4215524" [ label = "CFG" ]
+"4215521" -> "4215533" [ label = "DFG" ]
+"4215524" -> "4215529" [ label = "DFG" ]
+"4215529" -> "4215533" [ label = "CFG" ]
+"4215529" -> "4215537" [ label = "DFG" ]
+"4215533" -> "4215536" [ label = "CFG" ]
+"4215533" -> "4215537" [ label = "DFG" ]
+"4215536" -> "4215537" [ label = "CFG" ]
+}

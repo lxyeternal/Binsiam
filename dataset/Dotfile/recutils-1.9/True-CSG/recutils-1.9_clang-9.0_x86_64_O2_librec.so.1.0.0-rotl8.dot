@@ -1,0 +1,11 @@
+digraph "func" {
+"161200" [label = "mov ecx , esi" ]
+"161202" [label = "mov eax , edi" ]
+"161204" [label = "rol al , cl" ]
+"161206" [label = "retn" ]
+"161200" -> "161202" [ label = "CFG" ]
+"161200" -> "161204" [ label = "DFG" ]
+"161202" -> "161204" [ label = "DFG" ]
+"161202" -> "161206" [ label = "DFG" ]
+"161204" -> "161206" [ label = "CFG" ]
+}

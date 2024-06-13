@@ -1,0 +1,8 @@
+digraph "func" {
+"134556736" [label = "'mov eax, 0xffffffe0', 'nop word [cs:eax+eax], ax', 'nop', " ]
+"134556752" [label = "'not dword [ecx+eax+0x20]', 'add eax, 0x4', 'jne 0x8052c50', " ]
+"134556761" [label = "'retn', " ]
+"134556736" -> "134556752" [ label = "CFG" ]
+"134556752" -> "134556752" [ label = "CFG" ]
+"134556752" -> "134556761" [ label = "CFG" ]
+}

@@ -1,0 +1,14 @@
+digraph "func" {
+"82600" [label = "uxtb w0 , w0" ]
+"82604" [label = "sub w0 , w0 , # address" ]
+"82608" [label = "uxtb w0 , w0" ]
+"82612" [label = "cmp w0 , # address" ]
+"82616" [label = "cset w0 , ls" ]
+"82620" [label = "ret" ]
+"82600" -> "82604" [ label = "DFG" ]
+"82604" -> "82608" [ label = "DFG" ]
+"82608" -> "82612" [ label = "CFG" ]
+"82608" -> "82616" [ label = "DFG" ]
+"82612" -> "82616" [ label = "CFG" ]
+"82616" -> "82620" [ label = "DFG" ]
+}

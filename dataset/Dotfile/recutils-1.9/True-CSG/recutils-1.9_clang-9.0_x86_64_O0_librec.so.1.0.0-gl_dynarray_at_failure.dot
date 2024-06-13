@@ -1,0 +1,13 @@
+digraph "func" {
+"219792" [label = "push rbp" ]
+"219793" [label = "mov rbp , rsp" ]
+"219796" [label = "sub rsp , address" ]
+"219800" [label = "mov qword [ rbp - address ] , rdi" ]
+"219804" [label = "mov qword [ rbp - address ] , rsi" ]
+"219808" [label = "call symbol" ]
+"219792" -> "219793" [ label = "CFG" ]
+"219793" -> "219796" [ label = "CFG" ]
+"219796" -> "219800" [ label = "CFG" ]
+"219800" -> "219804" [ label = "CFG" ]
+"219804" -> "219808" [ label = "CFG" ]
+}

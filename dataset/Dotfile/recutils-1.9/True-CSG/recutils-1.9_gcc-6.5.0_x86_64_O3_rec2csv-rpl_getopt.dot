@@ -1,0 +1,18 @@
+digraph "func" {
+"4224848" [label = "sub rsp , address" ]
+"4224852" [label = "xor r9d , r9d" ]
+"4224855" [label = "xor r8d , r8d" ]
+"4224858" [label = "push address" ]
+"4224860" [label = "xor ecx , ecx" ]
+"4224862" [label = "call symbol" ]
+"4224867" [label = "add rsp , address" ]
+"4224871" [label = "retn" ]
+"4224848" -> "4224852" [ label = "CFG" ]
+"4224852" -> "4224855" [ label = "CFG" ]
+"4224855" -> "4224858" [ label = "CFG" ]
+"4224858" -> "4224860" [ label = "CFG" ]
+"4224860" -> "4224862" [ label = "CFG" ]
+"4224862" -> "4224867" [ label = "CFG" ]
+"4224862" -> "4224871" [ label = "DFG" ]
+"4224867" -> "4224871" [ label = "CFG" ]
+}

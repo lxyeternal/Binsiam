@@ -1,0 +1,14 @@
+digraph "func" {
+"4215584" [label = "cmp edi , address" ]
+"4215587" [label = "sete cl" ]
+"4215590" [label = "cmp edi , address" ]
+"4215593" [label = "sete al" ]
+"4215596" [label = "or al , cl" ]
+"4215598" [label = "retn" ]
+"4215584" -> "4215587" [ label = "CFG" ]
+"4215587" -> "4215590" [ label = "CFG" ]
+"4215587" -> "4215596" [ label = "DFG" ]
+"4215590" -> "4215593" [ label = "CFG" ]
+"4215593" -> "4215596" [ label = "CFG" ]
+"4215596" -> "4215598" [ label = "CFG" ]
+}

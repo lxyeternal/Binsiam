@@ -1,0 +1,15 @@
+digraph "func" {
+"4201804" [label = "sub x0 , x0 , # address" ]
+"4201808" [label = "ldrb w8 , [ x0 , # address ]!" ]
+"4201812" [label = "cmp w8 , # address" ]
+"4201816" [label = "b.eq address" ]
+"4201820" [label = "ret" ]
+"4201804" -> "4201808" [ label = "DFG" ]
+"4201804" -> "4201820" [ label = "DFG" ]
+"4201808" -> "4201812" [ label = "CFG" ]
+"4201808" -> "4201820" [ label = "DFG" ]
+"4201808" -> "4201816" [ label = "DFG" ]
+"4201812" -> "4201816" [ label = "CFG" ]
+"4201816" -> "4201808" [ label = "CFG" ]
+"4201816" -> "4201820" [ label = "CFG" ]
+}

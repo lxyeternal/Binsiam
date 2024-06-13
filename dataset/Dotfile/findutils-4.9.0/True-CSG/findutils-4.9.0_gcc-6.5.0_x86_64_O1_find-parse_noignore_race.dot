@@ -1,0 +1,11 @@
+digraph "func" {
+"4242407" [label = "sub rsp , address" ]
+"4242411" [label = "mov byte [ rel address ] , address" ]
+"4242418" [label = "call symbol" ]
+"4242423" [label = "add rsp , address" ]
+"4242427" [label = "retn" ]
+"4242407" -> "4242411" [ label = "CFG" ]
+"4242411" -> "4242418" [ label = "CFG" ]
+"4242418" -> "4242423" [ label = "CFG" ]
+"4242423" -> "4242427" [ label = "CFG" ]
+}

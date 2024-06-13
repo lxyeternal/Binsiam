@@ -1,0 +1,15 @@
+digraph "func" {
+"4235396" [label = "ldr x2 , [ x0 ]" ]
+"4235400" [label = "ldr x0 , [ x0 , # address ]" ]
+"4235404" [label = "eor x0 , x2 , x0" ]
+"4235408" [label = "udiv x2 , x0 , x1" ]
+"4235412" [label = "msub x0 , x2 , x1 , x0" ]
+"4235416" [label = "ret" ]
+"4235396" -> "4235400" [ label = "CFG" ]
+"4235396" -> "4235404" [ label = "DFG" ]
+"4235400" -> "4235404" [ label = "DFG" ]
+"4235404" -> "4235408" [ label = "DFG" ]
+"4235404" -> "4235412" [ label = "DFG" ]
+"4235408" -> "4235412" [ label = "DFG" ]
+"4235412" -> "4235416" [ label = "DFG" ]
+}

@@ -1,0 +1,14 @@
+digraph "func" {
+"4234480" [label = "push rax" ]
+"4234481" [label = "call symbol" ]
+"4234486" [label = "mov dword [ rax ] , address" ]
+"4234492" [label = "mov rax , address" ]
+"4234499" [label = "pop rcx" ]
+"4234500" [label = "retn" ]
+"4234480" -> "4234481" [ label = "CFG" ]
+"4234480" -> "4234499" [ label = "DFG" ]
+"4234481" -> "4234486" [ label = "DFG" ]
+"4234486" -> "4234492" [ label = "CFG" ]
+"4234492" -> "4234499" [ label = "CFG" ]
+"4234499" -> "4234500" [ label = "CFG" ]
+}

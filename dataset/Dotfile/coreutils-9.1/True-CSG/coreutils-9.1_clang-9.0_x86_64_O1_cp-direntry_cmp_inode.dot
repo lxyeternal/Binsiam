@@ -1,0 +1,17 @@
+digraph "func" {
+"4253984" [label = "mov rcx , qword [ rdi + address ]" ]
+"4253988" [label = "xor eax , eax" ]
+"4253990" [label = "cmp rcx , qword [ rsi + address ]" ]
+"4253994" [label = "seta al" ]
+"4253997" [label = "sbb eax , address" ]
+"4254000" [label = "retn" ]
+"4253984" -> "4253988" [ label = "CFG" ]
+"4253984" -> "4253990" [ label = "DFG" ]
+"4253988" -> "4253990" [ label = "CFG" ]
+"4253988" -> "4253994" [ label = "DFG" ]
+"4253988" -> "4253997" [ label = "DFG" ]
+"4253990" -> "4253994" [ label = "DFG" ]
+"4253990" -> "4253997" [ label = "DFG" ]
+"4253994" -> "4253997" [ label = "CFG" ]
+"4253997" -> "4254000" [ label = "DFG" ]
+}

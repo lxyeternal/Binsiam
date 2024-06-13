@@ -1,0 +1,15 @@
+digraph "func" {
+"280304" [label = "pxor xmm0 , xmm0" ]
+"280308" [label = "pxor xmm1 , xmm1" ]
+"280312" [label = "cvtsi2sd xmm0 , rsi" ]
+"280317" [label = "cvtsi2sd xmm1 , rdi" ]
+"280322" [label = "divsd xmm0 , qword [ rel address ]" ]
+"280330" [label = "addsd xmm0 , xmm1" ]
+"280334" [label = "retn" ]
+"280304" -> "280308" [ label = "CFG" ]
+"280308" -> "280312" [ label = "CFG" ]
+"280312" -> "280317" [ label = "CFG" ]
+"280317" -> "280322" [ label = "CFG" ]
+"280322" -> "280330" [ label = "CFG" ]
+"280330" -> "280334" [ label = "CFG" ]
+}

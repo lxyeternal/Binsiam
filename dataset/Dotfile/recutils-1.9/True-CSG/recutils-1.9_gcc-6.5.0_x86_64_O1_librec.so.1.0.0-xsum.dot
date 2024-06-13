@@ -1,0 +1,14 @@
+digraph "func" {
+"284301" [label = "lea rax , [ rdi + rsi ]" ]
+"284305" [label = "cmp rdi , rax" ]
+"284308" [label = "mov rdx , address" ]
+"284315" [label = "cmova rax , rdx" ]
+"284319" [label = "retn" ]
+"284301" -> "284305" [ label = "DFG" ]
+"284301" -> "284319" [ label = "DFG" ]
+"284305" -> "284308" [ label = "CFG" ]
+"284305" -> "284315" [ label = "DFG" ]
+"284308" -> "284315" [ label = "CFG" ]
+"284315" -> "284319" [ label = "DFG" ]
+"284315" -> "284305" [ label = "DFG" ]
+}

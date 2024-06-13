@@ -1,0 +1,13 @@
+digraph "func" {
+"143984" [label = "mov eax , address" ]
+"143989" [label = "cmp dword [ rdi + address ] , address" ]
+"143993" [label = "jne address" ]
+"143998" [label = "retn" ]
+"143995" [label = "mov eax , dword [ rdi + address ]" ]
+"143984" -> "143989" [ label = "CFG" ]
+"143984" -> "143998" [ label = "DFG" ]
+"143989" -> "143993" [ label = "CFG" ]
+"143993" -> "143998" [ label = "CFG" ]
+"143993" -> "143995" [ label = "CFG" ]
+"143995" -> "143998" [ label = "DFG" ]
+}

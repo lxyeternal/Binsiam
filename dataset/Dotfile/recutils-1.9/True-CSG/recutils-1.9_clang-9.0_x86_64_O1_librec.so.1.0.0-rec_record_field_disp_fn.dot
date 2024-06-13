@@ -1,0 +1,16 @@
+digraph "func" {
+"80704" [label = "xorps xmm0 , xmm0" ]
+"80707" [label = "movups xmmword [ rdi + address ] , xmm0" ]
+"80711" [label = "movups xmmword [ rdi + address ] , xmm0" ]
+"80715" [label = "movups xmmword [ rdi + address ] , xmm0" ]
+"80719" [label = "movups xmmword [ rdi ] , xmm0" ]
+"80722" [label = "retn" ]
+"80704" -> "80707" [ label = "DFG" ]
+"80704" -> "80711" [ label = "DFG" ]
+"80704" -> "80715" [ label = "DFG" ]
+"80704" -> "80719" [ label = "DFG" ]
+"80707" -> "80711" [ label = "CFG" ]
+"80711" -> "80715" [ label = "CFG" ]
+"80715" -> "80719" [ label = "CFG" ]
+"80719" -> "80722" [ label = "CFG" ]
+}

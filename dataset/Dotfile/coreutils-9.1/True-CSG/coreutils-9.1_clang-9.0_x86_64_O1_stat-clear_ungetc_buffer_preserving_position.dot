@@ -1,0 +1,13 @@
+digraph "func" {
+"4245648" [label = "test byte [ rdi + address ] , address" ]
+"4245652" [label = "jne address" ]
+"4245655" [label = "xor esi , esi" ]
+"4245654" [label = "retn" ]
+"4245657" [label = "mov edx , address" ]
+"4245662" [label = "jmp symbol" ]
+"4245648" -> "4245652" [ label = "CFG" ]
+"4245652" -> "4245655" [ label = "CFG" ]
+"4245652" -> "4245654" [ label = "CFG" ]
+"4245655" -> "4245657" [ label = "CFG" ]
+"4245657" -> "4245662" [ label = "CFG" ]
+}

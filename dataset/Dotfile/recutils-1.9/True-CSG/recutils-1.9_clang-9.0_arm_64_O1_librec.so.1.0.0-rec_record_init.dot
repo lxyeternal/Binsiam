@@ -1,0 +1,10 @@
+digraph "func" {
+"76820" [label = "movi v0 . 2d , # 0" ]
+"76824" [label = "stp q0 , q0 , [ x0 , # address ]" ]
+"76828" [label = "stp q0 , q0 , [ x0 ]" ]
+"76832" [label = "ret" ]
+"76820" -> "76824" [ label = "DFG" ]
+"76820" -> "76828" [ label = "DFG" ]
+"76824" -> "76828" [ label = "CFG" ]
+"76828" -> "76832" [ label = "CFG" ]
+}

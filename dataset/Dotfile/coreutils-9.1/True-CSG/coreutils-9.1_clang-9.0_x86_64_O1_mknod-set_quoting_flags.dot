@@ -1,0 +1,18 @@
+digraph "func" {
+"4207792" [label = "test rdi , rdi" ]
+"4207795" [label = "mov ecx , symbol" ]
+"4207800" [label = "cmovne rcx , rdi" ]
+"4207804" [label = "mov eax , dword [ rcx + address ]" ]
+"4207807" [label = "mov dword [ rcx + address ] , esi" ]
+"4207810" [label = "retn" ]
+"4207792" -> "4207795" [ label = "CFG" ]
+"4207792" -> "4207800" [ label = "DFG" ]
+"4207795" -> "4207800" [ label = "CFG" ]
+"4207795" -> "4207804" [ label = "DFG" ]
+"4207795" -> "4207807" [ label = "DFG" ]
+"4207800" -> "4207804" [ label = "DFG" ]
+"4207800" -> "4207807" [ label = "DFG" ]
+"4207804" -> "4207807" [ label = "CFG" ]
+"4207804" -> "4207810" [ label = "DFG" ]
+"4207807" -> "4207810" [ label = "CFG" ]
+}

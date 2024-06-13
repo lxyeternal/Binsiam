@@ -1,0 +1,14 @@
+digraph "func" {
+"4214588" [label = "adrp x3 , symbol" ]
+"4214592" [label = "add x3 , x3 , # address" ]
+"4214596" [label = "mov x2 , # address" ]
+"4214600" [label = "mov x1 , x0" ]
+"4214604" [label = "mov w0 , wzr" ]
+"4214608" [label = "b symbol" ]
+"4214588" -> "4214592" [ label = "CFG" ]
+"4214592" -> "4214596" [ label = "CFG" ]
+"4214596" -> "4214600" [ label = "CFG" ]
+"4214600" -> "4214604" [ label = "CFG" ]
+"4214600" -> "4214608" [ label = "DFG" ]
+"4214604" -> "4214608" [ label = "CFG" ]
+}

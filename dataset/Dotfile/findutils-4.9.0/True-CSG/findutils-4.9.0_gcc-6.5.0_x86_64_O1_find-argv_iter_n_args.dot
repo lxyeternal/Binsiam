@@ -1,0 +1,17 @@
+digraph "func" {
+"4264309" [label = "cmp qword [ rdi ] , address" ]
+"4264313" [label = "je address" ]
+"4264320" [label = "mov rax , qword [ rdi + address ]" ]
+"4264315" [label = "mov rax , qword [ rdi + address ]" ]
+"4264324" [label = "sub rax , qword [ rdi + address ]" ]
+"4264328" [label = "sar rax , address" ]
+"4264332" [label = "retn" ]
+"4264319" [label = "retn" ]
+"4264309" -> "4264313" [ label = "CFG" ]
+"4264313" -> "4264320" [ label = "CFG" ]
+"4264313" -> "4264315" [ label = "CFG" ]
+"4264320" -> "4264324" [ label = "DFG" ]
+"4264315" -> "4264319" [ label = "DFG" ]
+"4264324" -> "4264328" [ label = "DFG" ]
+"4264328" -> "4264332" [ label = "DFG" ]
+}

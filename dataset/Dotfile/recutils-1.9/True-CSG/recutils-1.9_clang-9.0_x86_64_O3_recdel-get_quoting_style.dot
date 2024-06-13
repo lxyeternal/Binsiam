@@ -1,0 +1,15 @@
+digraph "func" {
+"4223504" [label = "test rdi , rdi" ]
+"4223507" [label = "lea rax , [ rel symbol ]" ]
+"4223514" [label = "cmovne rax , rdi" ]
+"4223518" [label = "mov eax , dword [ rax ]" ]
+"4223520" [label = "retn" ]
+"4223504" -> "4223507" [ label = "CFG" ]
+"4223504" -> "4223514" [ label = "DFG" ]
+"4223507" -> "4223514" [ label = "CFG" ]
+"4223507" -> "4223518" [ label = "DFG" ]
+"4223507" -> "4223520" [ label = "DFG" ]
+"4223514" -> "4223518" [ label = "DFG" ]
+"4223514" -> "4223520" [ label = "DFG" ]
+"4223518" -> "4223520" [ label = "DFG" ]
+}

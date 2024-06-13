@@ -1,0 +1,15 @@
+digraph "func" {
+"4279360" [label = "mov rax , rdi" ]
+"4279363" [label = "xor edx , edx" ]
+"4279365" [label = "ror rax , address" ]
+"4279369" [label = "div rsi" ]
+"4279372" [label = "mov rax , rdx" ]
+"4279375" [label = "retn" ]
+"4279360" -> "4279363" [ label = "CFG" ]
+"4279360" -> "4279365" [ label = "DFG" ]
+"4279363" -> "4279365" [ label = "CFG" ]
+"4279363" -> "4279369" [ label = "DFG" ]
+"4279365" -> "4279369" [ label = "DFG" ]
+"4279369" -> "4279372" [ label = "DFG" ]
+"4279372" -> "4279375" [ label = "DFG" ]
+}

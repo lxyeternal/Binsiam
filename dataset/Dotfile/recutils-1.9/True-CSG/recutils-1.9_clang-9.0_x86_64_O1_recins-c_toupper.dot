@@ -1,0 +1,13 @@
+digraph "func" {
+"4291216" [label = "lea ecx , [ rdi - address ]" ]
+"4291219" [label = "lea eax , [ rdi - address ]" ]
+"4291222" [label = "cmp ecx , address" ]
+"4291225" [label = "cmovae eax , edi" ]
+"4291228" [label = "retn" ]
+"4291216" -> "4291219" [ label = "CFG" ]
+"4291216" -> "4291225" [ label = "DFG" ]
+"4291219" -> "4291222" [ label = "CFG" ]
+"4291219" -> "4291228" [ label = "DFG" ]
+"4291222" -> "4291225" [ label = "CFG" ]
+"4291225" -> "4291228" [ label = "DFG" ]
+}

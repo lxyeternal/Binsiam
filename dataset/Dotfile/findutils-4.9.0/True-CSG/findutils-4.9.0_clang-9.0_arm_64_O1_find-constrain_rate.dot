@@ -1,0 +1,14 @@
+digraph "func" {
+"4221392" [label = "fmov s1 , wzr" ]
+"4221396" [label = "fmov s2 , # 1 . 00000000" ]
+"4221400" [label = "fmax s1 , s0 , s1" ]
+"4221404" [label = "fcmp s0 , s2" ]
+"4221408" [label = "fcsel s0 , s2 , s1 , gt" ]
+"4221412" [label = "ret" ]
+"4221392" -> "4221396" [ label = "CFG" ]
+"4221396" -> "4221400" [ label = "CFG" ]
+"4221396" -> "4221408" [ label = "DFG" ]
+"4221400" -> "4221404" [ label = "CFG" ]
+"4221404" -> "4221408" [ label = "CFG" ]
+"4221408" -> "4221412" [ label = "CFG" ]
+}

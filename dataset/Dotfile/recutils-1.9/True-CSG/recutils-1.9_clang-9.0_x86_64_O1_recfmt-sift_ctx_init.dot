@@ -1,0 +1,17 @@
+digraph "func" {
+"4273680" [label = "mov qword [ rdi ] , rsi" ]
+"4273683" [label = "mov qword [ rdi + address ] , rdx" ]
+"4273687" [label = "mov qword [ rdi + address ] , rcx" ]
+"4273691" [label = "mov qword [ rdi + address ] , r8" ]
+"4273695" [label = "xorps xmm0 , xmm0" ]
+"4273698" [label = "movups xmmword [ rdi + address ] , xmm0" ]
+"4273702" [label = "mov qword [ rdi + address ] , address" ]
+"4273710" [label = "retn" ]
+"4273680" -> "4273683" [ label = "CFG" ]
+"4273683" -> "4273687" [ label = "CFG" ]
+"4273687" -> "4273691" [ label = "CFG" ]
+"4273691" -> "4273695" [ label = "CFG" ]
+"4273695" -> "4273698" [ label = "DFG" ]
+"4273698" -> "4273702" [ label = "CFG" ]
+"4273702" -> "4273710" [ label = "CFG" ]
+}

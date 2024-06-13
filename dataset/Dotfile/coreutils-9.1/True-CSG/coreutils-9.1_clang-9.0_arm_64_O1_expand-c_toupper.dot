@@ -1,0 +1,13 @@
+digraph "func" {
+"4216732" [label = "sub w8 , w0 , # address" ]
+"4216736" [label = "sub w9 , w0 , # address" ]
+"4216740" [label = "cmp w8 , # address" ]
+"4216744" [label = "csel w0 , w9 , w0 , cc" ]
+"4216748" [label = "ret" ]
+"4216732" -> "4216736" [ label = "CFG" ]
+"4216732" -> "4216744" [ label = "DFG" ]
+"4216736" -> "4216740" [ label = "CFG" ]
+"4216736" -> "4216744" [ label = "DFG" ]
+"4216740" -> "4216744" [ label = "CFG" ]
+"4216744" -> "4216748" [ label = "DFG" ]
+}

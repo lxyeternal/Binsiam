@@ -1,0 +1,16 @@
+digraph "func" {
+"4201904" [label = "push rax" ]
+"4201905" [label = "mov eax , dword [ rel symbol ]" ]
+"4201911" [label = "cmp eax , dword [ rel symbol ]" ]
+"4201917" [label = "jge address" ]
+"4201925" [label = "call symbol" ]
+"4201919" [label = "pop rax" ]
+"4201920" [label = "jmp symbol" ]
+"4201904" -> "4201905" [ label = "CFG" ]
+"4201905" -> "4201911" [ label = "CFG" ]
+"4201905" -> "4201917" [ label = "DFG" ]
+"4201911" -> "4201917" [ label = "CFG" ]
+"4201917" -> "4201925" [ label = "CFG" ]
+"4201917" -> "4201919" [ label = "CFG" ]
+"4201919" -> "4201920" [ label = "CFG" ]
+}

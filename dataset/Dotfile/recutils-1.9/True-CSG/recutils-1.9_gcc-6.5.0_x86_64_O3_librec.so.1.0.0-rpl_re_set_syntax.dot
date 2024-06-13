@@ -1,0 +1,10 @@
+digraph "func" {
+"308704" [label = "mov rdx , qword [ rel symbol ]" ]
+"308711" [label = "mov rax , qword [ rdx ]" ]
+"308714" [label = "mov qword [ rdx ] , rdi" ]
+"308717" [label = "retn" ]
+"308704" -> "308711" [ label = "CFG" ]
+"308711" -> "308714" [ label = "CFG" ]
+"308711" -> "308717" [ label = "DFG" ]
+"308714" -> "308717" [ label = "CFG" ]
+}

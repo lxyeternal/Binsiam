@@ -1,0 +1,15 @@
+digraph "func" {
+"4331760" [label = "test rdi , rdi" ]
+"4331763" [label = "je address" ]
+"4331774" [label = "retn" ]
+"4331765" [label = "test rsi , rsi" ]
+"4331768" [label = "je address" ]
+"4331770" [label = "mov qword [ rdi + address ] , rsi" ]
+"4331760" -> "4331763" [ label = "CFG" ]
+"4331763" -> "4331774" [ label = "CFG" ]
+"4331763" -> "4331765" [ label = "CFG" ]
+"4331765" -> "4331768" [ label = "CFG" ]
+"4331768" -> "4331774" [ label = "CFG" ]
+"4331768" -> "4331770" [ label = "CFG" ]
+"4331770" -> "4331774" [ label = "CFG" ]
+}

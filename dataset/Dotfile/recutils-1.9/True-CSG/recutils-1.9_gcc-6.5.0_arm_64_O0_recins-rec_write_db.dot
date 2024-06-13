@@ -1,0 +1,9 @@
+digraph "func" {
+"4213744" [label = "adrp x16 , symbol" ]
+"4213748" [label = "ldr x17 , [ x16 , # address ]" ]
+"4213752" [label = "add x16 , x16 , # address" ]
+"4213756" [label = "br x17" ]
+"4213744" -> "4213748" [ label = "CFG" ]
+"4213748" -> "4213752" [ label = "CFG" ]
+"4213752" -> "4213756" [ label = "CFG" ]
+}

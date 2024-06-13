@@ -1,0 +1,13 @@
+digraph "func" {
+"4234656" [label = "cmp rdi , symbol" ]
+"4234663" [label = "sete al" ]
+"4234666" [label = "cmp rdi , symbol" ]
+"4234673" [label = "sete dl" ]
+"4234676" [label = "or eax , edx" ]
+"4234678" [label = "retn" ]
+"4234656" -> "4234663" [ label = "CFG" ]
+"4234663" -> "4234666" [ label = "CFG" ]
+"4234666" -> "4234673" [ label = "CFG" ]
+"4234673" -> "4234676" [ label = "DFG" ]
+"4234676" -> "4234678" [ label = "DFG" ]
+}

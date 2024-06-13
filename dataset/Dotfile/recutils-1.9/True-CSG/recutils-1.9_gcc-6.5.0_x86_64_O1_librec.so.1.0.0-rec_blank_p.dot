@@ -1,0 +1,17 @@
+digraph "func" {
+"81560" [label = "lea eax , [ rdi - address ]" ]
+"81563" [label = "cmp al , address" ]
+"81565" [label = "setbe al" ]
+"81568" [label = "cmp dil , address" ]
+"81572" [label = "sete dl" ]
+"81575" [label = "or eax , edx" ]
+"81577" [label = "retn" ]
+"81560" -> "81563" [ label = "CFG" ]
+"81560" -> "81565" [ label = "DFG" ]
+"81560" -> "81575" [ label = "DFG" ]
+"81563" -> "81565" [ label = "CFG" ]
+"81565" -> "81568" [ label = "CFG" ]
+"81568" -> "81572" [ label = "CFG" ]
+"81572" -> "81575" [ label = "DFG" ]
+"81575" -> "81577" [ label = "DFG" ]
+}

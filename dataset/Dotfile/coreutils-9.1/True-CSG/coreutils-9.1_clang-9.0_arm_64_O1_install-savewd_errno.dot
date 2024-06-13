@@ -1,0 +1,16 @@
+digraph "func" {
+"4256012" [label = "ldr w8 , [ x0 ]" ]
+"4256016" [label = "cmp w8 , # address" ]
+"4256020" [label = "b.ne address" ]
+"4256032" [label = "mov w0 , wzr" ]
+"4256024" [label = "ldr w0 , [ x0 , # address ]" ]
+"4256036" [label = "ret" ]
+"4256028" [label = "ret" ]
+"4256012" -> "4256016" [ label = "CFG" ]
+"4256012" -> "4256020" [ label = "DFG" ]
+"4256016" -> "4256020" [ label = "CFG" ]
+"4256020" -> "4256032" [ label = "CFG" ]
+"4256020" -> "4256024" [ label = "CFG" ]
+"4256032" -> "4256036" [ label = "CFG" ]
+"4256024" -> "4256028" [ label = "DFG" ]
+}

@@ -1,0 +1,18 @@
+digraph "func" {
+"4218668" [label = "mov x8 , # address" ]
+"4218672" [label = "movk x8 , # address , lsl # address" ]
+"4218676" [label = "movk x8 , # address , lsl # address" ]
+"4218680" [label = "movk x8 , # address , lsl # address" ]
+"4218684" [label = "smulh x8 , x0 , x8" ]
+"4218688" [label = "asr x9 , x8 , # address" ]
+"4218692" [label = "add x0 , x9 , x8 , lsr # address" ]
+"4218696" [label = "ret" ]
+"4218668" -> "4218672" [ label = "CFG" ]
+"4218672" -> "4218676" [ label = "CFG" ]
+"4218676" -> "4218680" [ label = "CFG" ]
+"4218680" -> "4218684" [ label = "CFG" ]
+"4218684" -> "4218688" [ label = "DFG" ]
+"4218684" -> "4218692" [ label = "DFG" ]
+"4218688" -> "4218692" [ label = "DFG" ]
+"4218692" -> "4218696" [ label = "DFG" ]
+}

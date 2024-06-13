@@ -1,0 +1,16 @@
+digraph "func" {
+"103773" [label = "push rbp" ]
+"103774" [label = "mov rbp , rsp" ]
+"103777" [label = "mov qword [ rbp - address ] , rdi" ]
+"103781" [label = "mov rax , qword [ rbp - address ]" ]
+"103785" [label = "mov rax , qword [ rax + address ]" ]
+"103789" [label = "pop rbp" ]
+"103790" [label = "retn" ]
+"103773" -> "103774" [ label = "CFG" ]
+"103774" -> "103777" [ label = "CFG" ]
+"103777" -> "103781" [ label = "DFG" ]
+"103781" -> "103785" [ label = "DFG" ]
+"103785" -> "103789" [ label = "CFG" ]
+"103785" -> "103790" [ label = "DFG" ]
+"103789" -> "103790" [ label = "CFG" ]
+}

@@ -1,0 +1,13 @@
+digraph "func" {
+"4245888" [label = "mov rdx , rsi" ]
+"4245891" [label = "mov ecx , symbol" ]
+"4245896" [label = "mov rsi , rdi" ]
+"4245899" [label = "xor edi , edi" ]
+"4245901" [label = "jmp symbol" ]
+"4245888" -> "4245891" [ label = "CFG" ]
+"4245888" -> "4245901" [ label = "DFG" ]
+"4245891" -> "4245896" [ label = "CFG" ]
+"4245896" -> "4245899" [ label = "CFG" ]
+"4245896" -> "4245901" [ label = "DFG" ]
+"4245899" -> "4245901" [ label = "CFG" ]
+}

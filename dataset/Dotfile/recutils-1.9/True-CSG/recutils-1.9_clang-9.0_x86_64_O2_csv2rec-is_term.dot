@@ -1,0 +1,17 @@
+digraph "func" {
+"4215392" [label = "cmp dil , address" ]
+"4215396" [label = "sete al" ]
+"4215399" [label = "cmp dil , address" ]
+"4215403" [label = "sete cl" ]
+"4215406" [label = "or cl , al" ]
+"4215408" [label = "movzx eax , cl" ]
+"4215411" [label = "retn" ]
+"4215392" -> "4215396" [ label = "CFG" ]
+"4215396" -> "4215399" [ label = "CFG" ]
+"4215396" -> "4215406" [ label = "DFG" ]
+"4215399" -> "4215403" [ label = "CFG" ]
+"4215403" -> "4215406" [ label = "DFG" ]
+"4215403" -> "4215408" [ label = "DFG" ]
+"4215406" -> "4215408" [ label = "DFG" ]
+"4215408" -> "4215411" [ label = "DFG" ]
+}

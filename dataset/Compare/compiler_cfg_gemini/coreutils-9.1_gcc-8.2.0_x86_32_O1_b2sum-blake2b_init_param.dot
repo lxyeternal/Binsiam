@@ -1,0 +1,13 @@
+digraph "func" {
+"134546889" [label = "'push edi', 'push esi', 'push ebx', 'mov edx, dword [esp+0x10]', 'mov ebx, dword [esp+0x14]', 'mov dword [edx], 0x0', 'mov dword [edx+0xe8], 0x0', 'lea edi, [edx+0x4]', 'and edi, 0xfffffffc', 'mov ecx, edx', 'sub ecx, edi', 'add ecx, 0xec', 'shr ecx, 0x2', 'mov eax, 0x0', 'rep stosd dword [edi]', " ]
+"134546942" [label = "'mov esi, dword [eax*8+0x8055a80]', 'mov edi, dword [eax*8+0x8055a84]', 'mov dword [edx+eax*8], esi', 'mov dword [edx+eax*8+0x4], edi', 'add eax, 0x1', 'cmp eax, 0x8', 'jne 0x80505fe', " ]
+"134546971" [label = "'mov eax, 0x0', " ]
+"134546976" [label = "'mov ecx, dword [ebx+eax*8]', 'xor dword [edx+eax*8], ecx', 'mov ecx, dword [ebx+eax*8+0x4]', 'xor dword [edx+eax*8+0x4], ecx', 'add eax, 0x1', 'cmp eax, 0x8', 'jne 0x8050620', " ]
+"134546998" [label = "'movzx eax, byte [ebx]', 'mov dword [edx+0xe4], eax', 'mov eax, 0x0', 'pop ebx', 'pop esi', 'pop edi', 'retn', " ]
+"134546889" -> "134546942" [ label = "CFG" ]
+"134546942" -> "134546942" [ label = "CFG" ]
+"134546942" -> "134546971" [ label = "CFG" ]
+"134546971" -> "134546976" [ label = "CFG" ]
+"134546976" -> "134546976" [ label = "CFG" ]
+"134546976" -> "134546998" [ label = "CFG" ]
+}

@@ -1,0 +1,15 @@
+digraph "func" {
+"295224" [label = "scvtf d1 , x1" ]
+"295228" [label = "adrp x1 , address" ]
+"295232" [label = "scvtf d2 , x0" ]
+"295236" [label = "ldr d0 , [ x1 , # address ]" ]
+"295240" [label = "fdiv d0 , d1 , d0" ]
+"295244" [label = "fadd d0 , d0 , d2" ]
+"295248" [label = "ret" ]
+"295224" -> "295228" [ label = "CFG" ]
+"295228" -> "295232" [ label = "CFG" ]
+"295232" -> "295236" [ label = "CFG" ]
+"295236" -> "295240" [ label = "CFG" ]
+"295240" -> "295244" [ label = "CFG" ]
+"295244" -> "295248" [ label = "CFG" ]
+}

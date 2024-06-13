@@ -1,0 +1,11 @@
+digraph "func" {
+"4365561" [label = "push rbp" ]
+"4365562" [label = "mov rbp , rsp" ]
+"4365565" [label = "mov eax , dword [ rel symbol ]" ]
+"4365571" [label = "mov edi , eax" ]
+"4365573" [label = "call symbol" ]
+"4365561" -> "4365562" [ label = "CFG" ]
+"4365562" -> "4365565" [ label = "CFG" ]
+"4365565" -> "4365571" [ label = "DFG" ]
+"4365571" -> "4365573" [ label = "DFG" ]
+}

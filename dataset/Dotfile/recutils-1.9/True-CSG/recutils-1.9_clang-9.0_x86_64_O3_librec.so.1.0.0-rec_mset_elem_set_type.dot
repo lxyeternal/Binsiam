@@ -1,0 +1,18 @@
+digraph "func" {
+"73360" [label = "mov rax , qword [ rdi + address ]" ]
+"73364" [label = "movsxd rcx , dword [ rdi ]" ]
+"73367" [label = "add qword [ rax + rcx * 8 + address ] , address" ]
+"73376" [label = "mov dword [ rdi ] , esi" ]
+"73378" [label = "movsxd rcx , esi" ]
+"73381" [label = "add qword [ rax + rcx * 8 + address ] , address" ]
+"73390" [label = "retn" ]
+"73360" -> "73364" [ label = "CFG" ]
+"73360" -> "73367" [ label = "DFG" ]
+"73360" -> "73381" [ label = "DFG" ]
+"73360" -> "73390" [ label = "DFG" ]
+"73364" -> "73367" [ label = "DFG" ]
+"73367" -> "73376" [ label = "CFG" ]
+"73376" -> "73378" [ label = "CFG" ]
+"73378" -> "73381" [ label = "DFG" ]
+"73381" -> "73390" [ label = "CFG" ]
+}

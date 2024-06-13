@@ -1,0 +1,14 @@
+digraph "func" {
+"4269792" [label = "shl esi , address" ]
+"4269795" [label = "sar esi , address" ]
+"4269798" [label = "and esi , address" ]
+"4269804" [label = "mov edx , address" ]
+"4269809" [label = "xor eax , eax" ]
+"4269811" [label = "jmp symbol" ]
+"4269792" -> "4269795" [ label = "DFG" ]
+"4269795" -> "4269798" [ label = "DFG" ]
+"4269798" -> "4269804" [ label = "CFG" ]
+"4269798" -> "4269811" [ label = "DFG" ]
+"4269804" -> "4269809" [ label = "CFG" ]
+"4269809" -> "4269811" [ label = "CFG" ]
+}

@@ -1,0 +1,15 @@
+digraph "func" {
+"184328" [label = "ldrb w7 , [ x0 , # address ]" ]
+"184332" [label = "stp x3 , x4 , [ x0 , # address ]" ]
+"184336" [label = "orr w7 , w7 , # address" ]
+"184340" [label = "str x5 , [ x0 , # address ]" ]
+"184344" [label = "strb w7 , [ x0 , # address ]" ]
+"184348" [label = "b symbol" ]
+"184328" -> "184332" [ label = "CFG" ]
+"184328" -> "184336" [ label = "DFG" ]
+"184332" -> "184336" [ label = "CFG" ]
+"184336" -> "184340" [ label = "CFG" ]
+"184336" -> "184344" [ label = "DFG" ]
+"184340" -> "184344" [ label = "CFG" ]
+"184344" -> "184348" [ label = "CFG" ]
+}

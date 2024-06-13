@@ -1,0 +1,15 @@
+digraph "func" {
+"202004" [label = "stp x29 , x30 , [ sp , #- address ]!" ]
+"202008" [label = "mov x29 , sp" ]
+"202012" [label = "add x0 , x1 , # address" ]
+"202016" [label = "bl symbol" ]
+"202020" [label = "mov w0 , wzr" ]
+"202024" [label = "ldp x29 , x30 , [ sp ] , # address" ]
+"202028" [label = "ret" ]
+"202004" -> "202008" [ label = "CFG" ]
+"202008" -> "202012" [ label = "CFG" ]
+"202012" -> "202016" [ label = "DFG" ]
+"202016" -> "202020" [ label = "CFG" ]
+"202020" -> "202024" [ label = "CFG" ]
+"202024" -> "202028" [ label = "CFG" ]
+}

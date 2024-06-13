@@ -1,0 +1,16 @@
+digraph "func" {
+"170608" [label = "ldrb w8 , [ x0 , # address ]" ]
+"170612" [label = "tbnz w8 , # 0 , address" ]
+"170628" [label = "ldp x2 , x0 , [ x0 , # address ]" ]
+"170616" [label = "ldr x2 , [ x0 , # address ]" ]
+"170632" [label = "br x2" ]
+"170620" [label = "mov x0 , x1" ]
+"170624" [label = "br x2" ]
+"170608" -> "170612" [ label = "DFG" ]
+"170612" -> "170628" [ label = "CFG" ]
+"170612" -> "170616" [ label = "CFG" ]
+"170628" -> "170632" [ label = "DFG" ]
+"170616" -> "170620" [ label = "CFG" ]
+"170616" -> "170624" [ label = "DFG" ]
+"170620" -> "170624" [ label = "CFG" ]
+}

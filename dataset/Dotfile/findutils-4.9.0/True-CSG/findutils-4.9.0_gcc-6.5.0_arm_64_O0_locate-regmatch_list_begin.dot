@@ -1,0 +1,14 @@
+digraph "func" {
+"4319168" [label = "sub sp , sp , # address" ]
+"4319172" [label = "str x0 , [ sp , # address ]" ]
+"4319176" [label = "ldr x0 , [ sp , # address ]" ]
+"4319180" [label = "ldr x0 , [ x0 , # address ]" ]
+"4319184" [label = "add sp , sp , # address" ]
+"4319188" [label = "ret" ]
+"4319168" -> "4319172" [ label = "CFG" ]
+"4319172" -> "4319176" [ label = "DFG" ]
+"4319176" -> "4319180" [ label = "DFG" ]
+"4319180" -> "4319184" [ label = "CFG" ]
+"4319180" -> "4319188" [ label = "DFG" ]
+"4319184" -> "4319188" [ label = "CFG" ]
+}

@@ -1,0 +1,15 @@
+digraph "func" {
+"4238960" [label = "cmp byte [ rel address ] , address" ]
+"4238967" [label = "sete cl" ]
+"4238970" [label = "cmp byte [ rel address ] , address" ]
+"4238977" [label = "setne al" ]
+"4238980" [label = "and al , cl" ]
+"4238982" [label = "retn" ]
+"4238960" -> "4238967" [ label = "CFG" ]
+"4238967" -> "4238970" [ label = "CFG" ]
+"4238967" -> "4238980" [ label = "DFG" ]
+"4238970" -> "4238977" [ label = "CFG" ]
+"4238977" -> "4238980" [ label = "CFG" ]
+"4238980" -> "4238982" [ label = "CFG" ]
+"4238980" -> "4238977" [ label = "DFG" ]
+}

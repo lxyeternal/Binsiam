@@ -1,0 +1,11 @@
+digraph "func" {
+"4244752" [label = "mov eax , dword [ rel address ]" ]
+"4244758" [label = "mov dword [ rdi + address ] , eax" ]
+"4244761" [label = "movups xmm0 , xmmword [ rel symbol ]" ]
+"4244768" [label = "movups xmmword [ rdi ] , xmm0" ]
+"4244771" [label = "retn" ]
+"4244752" -> "4244758" [ label = "CFG" ]
+"4244758" -> "4244761" [ label = "CFG" ]
+"4244761" -> "4244768" [ label = "DFG" ]
+"4244768" -> "4244771" [ label = "CFG" ]
+}

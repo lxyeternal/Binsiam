@@ -1,0 +1,16 @@
+digraph "func" {
+"153312" [label = "cmp esi , address" ]
+"153315" [label = "je address" ]
+"153326" [label = "mov esi , edx" ]
+"153317" [label = "mov edi , esi" ]
+"153328" [label = "jmp symbol" ]
+"153319" [label = "mov esi , edx" ]
+"153321" [label = "jmp symbol" ]
+"153312" -> "153315" [ label = "CFG" ]
+"153315" -> "153326" [ label = "CFG" ]
+"153315" -> "153317" [ label = "CFG" ]
+"153326" -> "153328" [ label = "DFG" ]
+"153317" -> "153319" [ label = "CFG" ]
+"153317" -> "153321" [ label = "DFG" ]
+"153319" -> "153321" [ label = "DFG" ]
+}

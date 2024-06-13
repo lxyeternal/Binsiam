@@ -1,0 +1,16 @@
+digraph "func" {
+"4269736" [label = "cmn w1 , # address" ]
+"4269740" [label = "b.eq address" ]
+"4269756" [label = "mov w1 , w2" ]
+"4269744" [label = "mov w0 , w1" ]
+"4269760" [label = "b symbol" ]
+"4269748" [label = "mov w1 , w2" ]
+"4269752" [label = "b symbol" ]
+"4269736" -> "4269740" [ label = "CFG" ]
+"4269740" -> "4269756" [ label = "CFG" ]
+"4269740" -> "4269744" [ label = "CFG" ]
+"4269756" -> "4269760" [ label = "DFG" ]
+"4269744" -> "4269748" [ label = "CFG" ]
+"4269744" -> "4269752" [ label = "DFG" ]
+"4269748" -> "4269752" [ label = "DFG" ]
+}

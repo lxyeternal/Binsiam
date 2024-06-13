@@ -1,0 +1,15 @@
+digraph "func" {
+"198864" [label = "xor eax , eax" ]
+"198866" [label = "cmp byte [ rdi ] , address" ]
+"198869" [label = "jne address" ]
+"198879" [label = "retn" ]
+"198871" [label = "mov byte [ rdi ] , address" ]
+"198874" [label = "mov eax , address" ]
+"198864" -> "198866" [ label = "CFG" ]
+"198864" -> "198879" [ label = "DFG" ]
+"198866" -> "198869" [ label = "CFG" ]
+"198869" -> "198879" [ label = "CFG" ]
+"198869" -> "198871" [ label = "CFG" ]
+"198871" -> "198874" [ label = "CFG" ]
+"198874" -> "198879" [ label = "DFG" ]
+}

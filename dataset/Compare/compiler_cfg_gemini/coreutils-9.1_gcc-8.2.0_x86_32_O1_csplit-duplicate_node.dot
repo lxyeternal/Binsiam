@@ -1,0 +1,8 @@
+digraph "func" {
+"134541939" [label = "'push ebp', 'push edi', 'push esi', 'push ebx', 'sub esp, 0x1c', 'mov ebx, eax', 'mov esi, ecx', 'mov ecx, edx', 'lea eax, [edx*8]', 'mov edi, eax', 'mov eax, dword [ebx]', 'mov dword [esp+0xc], edx', 'mov edx, dword [eax+edx*8]', 'mov ecx, dword [eax+ecx*8+0x4]', 'mov eax, ebx', 'call 0x804f028', 'cmp eax, 0xffffffff', 'je 0x804f2fd', " ]
+"134542077" [label = "'add esp, 0x1c', 'pop ebx', 'pop esi', 'pop edi', 'pop ebp', 'retn', " ]
+"134541986" [label = "'lea ecx, [eax*8]', 'mov edx, dword [ebx]', 'and esi, 0x3ff', 'shl esi, 0x8', 'mov ebp, dword [edx+ecx+0x4]', 'and ebp, 0xfffc00ff', 'or esi, ebp', 'mov dword [edx+ecx+0x4], esi', 'mov ebp, dword [ebx]', 'lea esi, [ebp+ecx]', 'mov edx, dword [esi+0x4]', 'shr edx, 0x8', 'or dx, word [ebp+edi+0x5]', 'and edx, 0x3ff', 'shl edx, 0x8', 'mov ebp, dword [esi+0x4]', 'and ebp, 0xfffc00ff', 'or edx, ebp', 'mov dword [esi+0x4], edx', 'mov edx, dword [ebx]', 'or byte [edx+ecx+0x6], 0x4', 'mov edx, dword [ebx+0x10]', 'mov ecx, dword [esp+0xc]', 'mov dword [edx+eax*4], ecx', " ]
+"134541939" -> "134542077" [ label = "CFG" ]
+"134541939" -> "134541986" [ label = "CFG" ]
+"134541986" -> "134542077" [ label = "CFG" ]
+}
